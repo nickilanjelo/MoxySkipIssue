@@ -10,12 +10,7 @@ class TestPresenter: MvpPresenter<TestView>() {
 
     private lateinit var list: ArrayList<String>
 
-    override fun onFirstViewAttach() {
-        super.onFirstViewAttach()
-        getStrings()
-    }
-
-    private fun getStrings() {
+    fun getStrings() {
         list = DataProvider.getData()
         viewState.showList(list)
     }

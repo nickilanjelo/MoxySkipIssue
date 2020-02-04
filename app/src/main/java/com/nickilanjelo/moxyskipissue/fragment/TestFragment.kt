@@ -27,6 +27,11 @@ class TestFragment : MvpAppCompatFragment(),
         return inflater.inflate(R.layout.fragment_test, container, false)
     }
 
+    override fun onStart() {
+        super.onStart()
+        testPresenter.getStrings()
+    }
+
     override fun showList(list: ArrayList<String>) {
         recycler_view.adapter = TestAdapter(list)
         recycler_view.layoutManager = LinearLayoutManager(context)
