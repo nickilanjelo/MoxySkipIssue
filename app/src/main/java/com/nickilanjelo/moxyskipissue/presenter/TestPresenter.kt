@@ -8,10 +8,7 @@ import moxy.MvpPresenter
 @InjectViewState
 class TestPresenter: MvpPresenter<TestView>() {
 
-    private lateinit var list: ArrayList<String>
-
     fun getStrings() {
-        list = DataProvider.getData()
-        viewState.showList(list)
+        viewState.showList(DataProvider.getData())
     }
 }
